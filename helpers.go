@@ -6,14 +6,14 @@ import (
 	"strconv"
 )
 
-func setFromStringEnv(variable *string, env string) {
+func SetFromStringEnv(variable *string, env string) {
 	result, exists := os.LookupEnv(env)
 	if exists {
 		*variable = result
 	}
 }
 
-func setFromBoolEnv(variable *bool, env string) {
+func SetFromBoolEnv(variable *bool, env string) {
 	result, exists := os.LookupEnv(env)
 	if exists {
 		if result == "true" {
@@ -27,7 +27,7 @@ func setFromBoolEnv(variable *bool, env string) {
 	}
 }
 
-func setFromIntEnv(variable *int, env string) {
+func SetFromIntEnv(variable *int, env string) {
 	result, exists := os.LookupEnv(env)
 	if exists {
 		result, err := strconv.Atoi(result)
